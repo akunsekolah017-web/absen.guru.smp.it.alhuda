@@ -1,0 +1,100 @@
+<style>
+    /* 1. VARIABEL WARNA & GRADASI UTAMA */
+    :root {
+        --color-school-primary: #15803d;
+        --color-school-dark: #166534;
+        --color-school-light: #22c55e;
+    }
+
+    .bg-gradient-school {
+        background: linear-gradient(135deg, var(--color-school-primary) 0%, var(--color-school-dark) 100%);
+    }
+
+    /* 2. KEYFRAMES ANIMASI KUSTOM */
+    /* Efek Menukik & Memudar Saat Halaman Dimuat */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(24px) scale(0.98);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+
+    /* Efek Denyut Halus Indikator Kamera Live */
+    @keyframes pulseDot {
+        0%, 100% {
+            transform: scale(1);
+            opacity: 1;
+            box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7);
+        }
+        50% {
+            transform: scale(1.05);
+            opacity: 0.5;
+            box-shadow: 0 0 0 6px rgba(220, 38, 38, 0);
+        }
+    }
+
+    /* Efek Bergelombang Halus Pada Latar Belakang */
+    @keyframes gradientShift {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    /* 3. UTILITY CLASSES UNTUK ANIMASI */
+    /* Diterapkan pada Card Utama */
+    .animate-fade-in-up {
+        animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    /* Diterapkan pada Label "Live" Kamera */
+    .animate-pulse-dot {
+        animation: pulseDot 1.8s infinite ease-in-out;
+    }
+
+    /* Transisi Perpindahan Halaman Otentikasi ke Sesi Absen */
+    .section-transition {
+        transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+                    transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    /* 4. PENINGKATAN INTERAKSI MIKRO (MICRO-INTERACTIONS) */
+    /* Animasi Halus saat Input/Formulir Difokuskan */
+    input:focus, select:focus {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(21, 128, 61, 0.08);
+    }
+
+    /* Efek Klik Membal pada Tombol */
+    button:active, .cursor-pointer:active {
+        transform: scale(0.96) !important;
+    }
+
+    /* Efek Hover Mengambang Halus pada Elemen Tertentu */
+    .hover-float {
+        transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s ease;
+    }
+    .hover-float:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Gaya Desain untuk Scrollbar di Area Kamera/Form */
+    ::-webkit-scrollbar {
+        width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #c1c1c1;
+        border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #a8a8a8;
+    }
+</style>
